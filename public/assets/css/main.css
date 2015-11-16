@@ -1,0 +1,100 @@
+body {
+  padding: 20px 0;
+}
+
+.container {
+  width: 750px;
+}
+
+nav {
+  margin-bottom: 35px;
+}
+
+main {
+  min-height: 100%;
+}
+
+.ab-contact-list,
+.ab-contact-detail {
+  height: 650px;
+}
+
+.ab-contact-list {
+  background: #ccc;
+}
+
+.ab-contact-list h3 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.ab-contact-list input[type="search"] {
+  border-radius: 20px;
+}
+
+.ab-contact-list ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 19px;
+}
+
+.ab-contact-list ul li a {
+  display: block;
+  padding: 10px 5px;
+  border-bottom: 1px solid #aaa;
+  color: #333;
+  text-decoration: none;
+}
+
+.ab-contact-list ul li a:hover,
+.ab-contact-list ul li.active a {
+  background: #bbb;
+}
+
+.ab-contact-list ul li:first-child a {
+  border-top: 1px solid #aaa;
+}
+
+.ab-contact-detail {
+  background: #eee;
+  padding-top: 1em;
+}
+
+.ab-contact-detail h2 {
+  margin-top: 1em;
+  font-size: 25px;
+}
+
+.ab-contact-detail .btn-xs {
+  padding: 1px 14px;
+}
+
+.ab-contact-detail .btn-default {
+  background-color: #bbb;
+  color: #444;
+}
+
+.ab-contact-detail .btn-default:hover {
+  background-color: #ccc;
+}
+
+.ab-contact-detail dl,
+.ab-contact-detail form {
+  margin-top: 32px;
+}
+
+.ab-contact-detail dl dt,
+.ab-contact-detail dl dd {
+  margin-bottom: 10px;
+}
+
+.ab-contact-detail dl dt {
+  width: 80px;
+  text-align: left;
+  font-weight: 400;
+}
+
+.ab-contact-detail dl dd {
+  margin-left: 84px;
+}

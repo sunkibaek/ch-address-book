@@ -1,0 +1,60 @@
+<h2>{{ contact.currentContact.fullname }}</h2>
+
+<form class="form-horizontal" ng-submit="contact.submit()">
+  <div class="form-group">
+    <label for="phone" class="col-sm-3 control-label">Phone</label>
+
+    <div class="col-sm-9">
+      <input
+        class="form-control"
+        id="phone"
+        ng-model="contact.formValues.phone"
+        ng-value="contact.currentContact.phone | phone"
+        pattern="\([0-9]{3}\) [0-9]{3}-[0-9]{4}"
+        placeholder="(604) 123-1234"
+        required
+        type="phone">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="email" class="col-sm-3 control-label">Email</label>
+
+    <div class="col-sm-9">
+      <input
+        class="form-control"
+        id="email"
+        ng-model="contact.formValues.email"
+        ng-value="contact.currentContact.email"
+        placeholder="jane@example.com"
+        required
+        type="email">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="address" class="col-sm-3 control-label">Address</label>
+
+    <div class="col-sm-9">
+      <input
+        class="form-control"
+        id="address"
+        ng-model="contact.formValues.address"
+        ng-value="contact.currentContact.address"
+        placeholder="Address"
+        required
+        type="text">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-3 col-sm-9">
+      <input type="submit" class="btn btn-primary btn-sm">
+      <a
+        class="btn btn-default btn-sm"
+        ng-href="#{{contact.currentContact.showUrl}}">
+        Cancel
+      </a>
+    </div>
+  </div>
+</form>

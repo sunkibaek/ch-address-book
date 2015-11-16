@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app="addressBookApp" lang="en">
+	<head>
+		<!-- META -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Change Heroes Address Book Test App</title>
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+		<link rel="stylesheet" href="assets/css/main.css">
+
+		<!-- SCRIPTS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
+		<script src="assets/js/app.js"></script>
+		<script src="assets/js/controllers/contact.js"></script>
+		<script src="assets/js/controllers/contact-list.js"></script>
+		<script src="assets/js/factories/contact.js"></script>
+		<script src="assets/js/filters/phone.js"></script>
+	</head>
+
+	<body>
+		<nav>
+			<div class="container">
+				<div class="row">
+					<a href="/#/">
+						<img
+							alt="Change Heroes"
+							src="assets/images/change_heroes_logo.png">
+					</a>
+				</div>
+			</div>
+		</nav>
+
+		<main class="container">
+			<div class="row">
+				<div
+					class="col-sm-4 ab-contact-list"
+					ng-controller="ContactListCtrl as contactList">
+					<h3 class="text-center">All Contacts</h3>
+
+					<div>
+						<input
+							class="form-control"
+							name="search"
+							ng-model="contactList.search"
+							placeholder="Search"
+							type="search">
+					</div>
+
+					<ul>
+						<li
+							ng-class="{ active: contactList.isActive(contact.showUrl) }"
+							ng-repeat="contact in contactList.list.all | filter: contactList.search">
+							<a
+								ng-href="/#{{ contact.showUrl }}">
+								{{ contact.lastname }}, {{ contact.firstname }}
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col-sm-8 ab-contact-detail">
+					<ng-view></ng-view>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>
